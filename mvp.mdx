@@ -1,0 +1,60 @@
+---
+title: "MVP setup"
+description: "Get your React app running with one endpoint"
+---
+
+## Quick setup
+
+This is a React + TypeScript + Vite app with one API endpoint.
+
+### Prerequisites
+
+- Node.js installed
+- npm or yarn
+
+### Installation
+
+```bash
+npm install
+```
+
+### Run the app
+
+```bash
+npm run dev
+```
+
+Your app runs at `http://localhost:5173`
+
+## The endpoint
+
+### POST /api/predict
+
+Send data, get a prediction back.
+
+**Request:**
+
+```typescript
+{
+  input: string
+}
+```
+
+**Response:**
+
+```typescript
+{
+  prediction: string,
+  confidence: number
+}
+```
+
+**Example:**
+
+```bash
+curl -X POST http://localhost:5173/api/predict \
+  -H "Content-Type: application/json" \
+  -d '{"input": "your data here"}'
+```
+
+That's it. Ultra simple MVP.
